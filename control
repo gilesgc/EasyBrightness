@@ -1,0 +1,9 @@
+Package: gilesgc.easybrightness
+Name: EasyBrightness
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Tap the brightness slider in your control center to set your brightness to a default value
+Maintainer: Grant
+Author: Grant
+Section: Tweaks

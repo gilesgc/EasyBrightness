@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>gilesgc.easybrightness</string>
+			<key>key</key>
+			<string>isEnabled</string>
+			<key>label</key>
+			<string>Enable tweak</string>
+			<key>PostNotification</key>
+			<string>gilesgc.easybrightness/prefChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>defaults</key>
+			<string>gilesgc.easybrightness</string>
+			<key>key</key>
+			<string>brightnessSliderTitle</string>
+			<key>label</key>
+			<string>Default brightness level</string>
+			<key>cell</key>
+			<string>PSTitleValueCell</string>
+		</dict>
+		<dict>
+			<key>segmentCount</key>
+			<integer>1000</integer>
+			<key>max</key>
+			<real>1</real>
+			<key>min</key>
+			<real>0</real>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>0.5</real>
+			<key>defaults</key>
+			<string>gilesgc.easybrightness</string>
+			<key>key</key>
+			<string>brightnessSlider</string>
+			<key>label</key>
+			<string>Default brightness level</string>
+			<key>PostNotification</key>
+			<string>gilesgc.easybrightness/prefChanged</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>EasyBrightness</string>
+</dict>
+</plist>
