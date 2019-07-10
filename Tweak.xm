@@ -12,10 +12,9 @@ CCUIDisplayModuleViewController *ccBrightnessController;
 
 static bool tweakIsEnabled = YES;
 static float defaultBrightness = 0.5f;
-static NSUserDefaults *prefs;
 
 static void loadPrefs() {
-	prefs = [[NSUserDefaults alloc] initWithSuiteName:@"gilesgc.easybrightness"];
+	NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.gilesgc.easybrightness"];
 	tweakIsEnabled = [prefs objectForKey:@"isEnabled"] ? [prefs boolForKey:@"isEnabled"] : YES;
 	defaultBrightness = [prefs objectForKey:@"brightnessSlider"] ? [prefs floatForKey:@"brightnessSlider"] : 0.5f;
 }
@@ -49,7 +48,7 @@ static void loadPrefs() {
 
 	//dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 		loadPrefs();
-		CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("gilesgc.easybrightness/prefChanged"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+		CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.gilesgc.easybrightness/prefChanged"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 		%init;
 	//});
 }

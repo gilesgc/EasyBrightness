@@ -14,13 +14,13 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>gilesgc.easybrightness</string>
+			<string>com.gilesgc.easybrightness</string>
 			<key>key</key>
 			<string>isEnabled</string>
 			<key>label</key>
 			<string>Enable tweak</string>
 			<key>PostNotification</key>
-			<string>gilesgc.easybrightness/prefChanged</string>
+			<string>com.gilesgc.easybrightness/prefChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -28,7 +28,7 @@
 		</dict>
 		<dict>
 			<key>defaults</key>
-			<string>gilesgc.easybrightness</string>
+			<string>com.gilesgc.easybrightness</string>
 			<key>key</key>
 			<string>brightnessSliderTitle</string>
 			<key>label</key>
@@ -48,13 +48,13 @@
 			<key>default</key>
 			<real>0.5</real>
 			<key>defaults</key>
-			<string>gilesgc.easybrightness</string>
+			<string>com.gilesgc.easybrightness</string>
 			<key>key</key>
 			<string>brightnessSlider</string>
 			<key>label</key>
 			<string>Default brightness level</string>
 			<key>PostNotification</key>
-			<string>gilesgc.easybrightness/prefChanged</string>
+			<string>com.gilesgc.easybrightness/prefChanged</string>
 		</dict>
 	</array>
 	<key>title</key>

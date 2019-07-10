@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>EasyBrightness</string>
 	<key>CFBundleIdentifier</key>
-	<string>gilesgc.easybrightness</string>
+	<string>com.gilesgc.easybrightness</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
