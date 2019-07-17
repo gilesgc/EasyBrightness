@@ -1,11 +1,15 @@
 @interface CCUIModuleSliderView
-	-(void)setValue:(float)arg1;
+- (void)setValue:(float)arg1;
 @end
 
 @interface CCUIDisplayModuleViewController : UIViewController
-	@property (nonatomic,retain) UIView * view;
-	@property (retain,nonatomic) CCUIModuleSliderView * sliderView;
-	-(void)_setBacklightLevel:(float)arg1;
+@property (nonatomic,retain) UIView * view;
+@property (retain,nonatomic) CCUIModuleSliderView * sliderView;
+@end
+
+@interface SBBrightnessController
++ (id)sharedBrightnessController;
+- (void)setBrightnessLevel:(float)arg1;
 @end
 
 CCUIDisplayModuleViewController *ccBrightnessController;
@@ -33,7 +37,7 @@ static void loadPrefs() {
 %new
 -(void)setBrightnessToDefault {
 	if(ccBrightnessController && tweakIsEnabled) {
-		[ccBrightnessController _setBacklightLevel:defaultBrightness];
+		[[%c(SBBrightnessController) sharedBrightnessController] setBrightnessLevel:defaultBrightness];
 		[ccBrightnessController.sliderView setValue:defaultBrightness];
 	}
 }
