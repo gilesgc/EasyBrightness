@@ -55,6 +55,8 @@
 			<string>Default brightness level</string>
 			<key>PostNotification</key>
 			<string>com.gilesgc.easybrightness/prefChanged</string>
+			<key>showValue</key>
+			<true/>
 		</dict>
 	</array>
 	<key>title</key>
