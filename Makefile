@@ -7,6 +7,7 @@ TWEAK_NAME = EasyBrightness
 
 EasyBrightness_FILES = Tweak.xm
 EasyBrightness_FRAMEWORKS = UIKit
+EasyBrightness_PRIVATE_FRAMEWORKS = BackBoardServices
 EasyBrightness_CFLAGS = -fobjc-arc
 
 after-install::
