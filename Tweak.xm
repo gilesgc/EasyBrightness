@@ -36,6 +36,16 @@ static void loadPrefs() {
 	return ccBrightnessController;
 }
 
+-(UIViewController *)contentViewControllerForContext:(id)arg1 {
+	if(!tweakIsEnabled)
+		return %orig;
+
+	ccBrightnessController = (CCUIDisplayModuleViewController*)%orig;
+	UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(setBrightnessToDefault)];
+	[ccBrightnessController.view addGestureRecognizer:tapGesture];
+	return ccBrightnessController;
+}
+
 %new
 -(void)setBrightnessToDefault {
 	if(ccBrightnessController && tweakIsEnabled) {
@@ -58,9 +68,8 @@ static void loadPrefs() {
 	if(!displayModule.loaded)
 		[displayModule load];
 
-	//dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-		loadPrefs();
-		CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.gilesgc.easybrightness/prefChanged"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
-		%init;
-	//});
+	loadPrefs();
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.gilesgc.easybrightness/prefChanged"), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+	%init;
+
 }
