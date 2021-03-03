@@ -56,7 +56,7 @@ static void loadPrefs() {
 -(void)setBrightnessToDefault {
 	if(ccBrightnessController && tweakIsEnabled) {
 		[[%c(SBBrightnessController) sharedBrightnessController] setBrightnessLevel:defaultBrightness];
-        [[[%c(SBDisplayBrightnessController) alloc] init] setBrightnessLevel:defaultBrightness];
+		[[[%c(SBDisplayBrightnessController) alloc] init] setBrightnessLevel:defaultBrightness];
 
 		//Credit to hbang for this code which prevents brightness shifts after respring
 		BKSDisplayBrightnessTransactionRef transaction = BKSDisplayBrightnessTransactionCreate(kCFAllocatorDefault);
