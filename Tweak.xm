@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import <BackBoardServices/BKSDisplayBrightness.h>
 
 @interface CCUIModuleSliderView
@@ -11,6 +12,11 @@
 
 @interface SBBrightnessController
 + (id)sharedBrightnessController;
+- (void)setBrightnessLevel:(float)arg1;
+@end
+
+@interface SBDisplayBrightnessController
+- (id)init;
 - (void)setBrightnessLevel:(float)arg1;
 @end
 
@@ -50,6 +56,7 @@ static void loadPrefs() {
 -(void)setBrightnessToDefault {
 	if(ccBrightnessController && tweakIsEnabled) {
 		[[%c(SBBrightnessController) sharedBrightnessController] setBrightnessLevel:defaultBrightness];
+        [[[%c(SBDisplayBrightnessController) alloc] init] setBrightnessLevel:defaultBrightness];
 
 		//Credit to hbang for this code which prevents brightness shifts after respring
 		BKSDisplayBrightnessTransactionRef transaction = BKSDisplayBrightnessTransactionCreate(kCFAllocatorDefault);
